@@ -29,6 +29,7 @@ Furthermore, a user statistic is presented to the user that contains information
     - Start Docker Desktop.
     - Install the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
     - In Azure, go to the "Container registries" service and create a registry.
+    - In your Azure container registry, make sure to enable "Admin user" in the "Update" tab.
     - In a command terminal, go to your repository folder and run following commands:
 
 ```
@@ -38,9 +39,8 @@ Furthermore, a user statistic is presented to the user that contains information
         az acr login --name YOURLOGINSERVER.azurecr.io
         docker tag docker-app YOURLOGINSERVER.azurecr.io/testapp         
         docker push YOURLOGINSERVER.azurecr.io/testapp
-```
-	
-    - In your Azure container registry, make sure to enable "Admin user" in the "Update" tab.
+```  
+
 
 - Deploy app:
     - In Azure, go to the "App Services" service and create the app service by selecting your docker image from the Azure container registry.
