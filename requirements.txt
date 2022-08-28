@@ -1,0 +1,10 @@
+flask==2.0.3
+flask-login==0.5.0
+numpy==1.19.4
+pyodbc==4.0.32
+flask_bcrypt==1.0.1
+flask_sqlalchemy==2.5.1
+flask_wtf==0.14.3
+wtforms==2.3.3
+Werkzeug==2.0.0
+Jinja2==3.0.0

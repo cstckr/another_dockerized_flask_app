@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+   <body>
+     <main>
+        <h1> Label me! </h1>
+        <p>
+            Welcome, {{username}}. </br> 
+        </p>
+        <p>
+            This is a demo app. Please submit a label for the displayed image. 
+        </p>
+        <p> 
+         Your user statistic: </br>
+            <table>
+                <tr>
+                    <td> Submitted labels: </td>
+                    <td> {{count_labels}} </td>
+                </tr>
+                <tr>
+                <td> Labeled images: </td>
+                    <td> {{count_labeled_images}} </td>
+                </tr>
+                <tr>
+                    <td> Images waiting for your label: </td>
+                    <td> {{count_not_labeled_images}} </td>
+                </tr>
+            </table>
+        </p> 
+        
+        <p> 
+            <img src="{{url}}" height="250" width="250"> 
+        </p>
+        
+        <form method="post" action="{{url_for('index.output')}}">
+            <label for="label"> Label the image: </label>
+            <select id="label" name="label">
+            <option value="0"> 0 </option>
+            <option value="1"> 1 </option>
+            <option value="2"> 2 </option>
+            <option value="3"> 3 </option>
+            <option value="4"> 4 </option>
+            <option value="5"> 5 </option>
+            <option value="6"> 6 </option>
+            <option value="7"> 7 </option>
+            <option value="8"> 8 </option>
+            <option value="9"> 9 </option>
+            </select>
+            <button type="submit"> Submit </button>
+        </form>
+         
+        </br>
+        </br>
+        <a href="{{url_for('authentication.logout')}}"> Log out </a> 
+        </br>
+        <a href="{{url_for('authentication.change_password')}}"> Change password </a> 
+        </br>
+     </main>      
+   </body>
+</html>
+
