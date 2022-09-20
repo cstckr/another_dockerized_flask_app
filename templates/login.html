@@ -1,25 +1,32 @@
 <!doctype html>
 <html>
-   <body>
-     <main>
-         <h1> Login </h1>
-         <form method="POST" action="">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='mystyle1.css')}}">
+</head>
+
+<body>
+    <main>
+        <h1> Login </h1>
+        <form method="POST" action="">
             {{ form.hidden_tag() }}
-            {{ form.username }}
-            {{ form.password }}
-            {{ form.submit }}
-            
+
+            <div class="action_field"> {{ form.recaptcha }} </div> </br>
+            <div class="action_field"> {{ form.username }} </div> </br>
+            <div class="action_field"> {{ form.password }} </div> </br>
+            <div class="action_field"> {{ form.submit }} </div> </br>
+
             {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    <ul class=flashes>
-                    {% for message in messages %}
-                    <li style="color:red;"> {{ message }} </li>
-                    {% endfor %}
-                    </ul>
-                {% endif %}
+            {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                <li style="color:red;"> {{ message }} </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             {% endwith %}
         </form>
-     </main>      
-   </body>
-</html>
+    </main>
+</body>
 
+</html>

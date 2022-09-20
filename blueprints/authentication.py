@@ -13,7 +13,7 @@ def login():
 
     user = db.session.query(User).filter_by(
         username=form.username.data).first()
-    if user:
+    if form.validate_on_submit():
         if flask_bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user)
             return redirect(url_for("index.main"))

@@ -7,6 +7,7 @@ from blueprints.authentication import authentication
 from blueprints.index import index
 from datetime import timedelta
 from credentials.application import secret_key
+from credentials.recaptcha import recaptcha_public_key, recaptcha_private_key
 
 
 def create_app():
@@ -16,6 +17,8 @@ def create_app():
     app.config["SECRET_KEY"] = secret_key
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
+    app.config["RECAPTCHA_PUBLIC_KEY"] = recaptcha_public_key
+    app.config["RECAPTCHA_PRIVATE_KEY"] = recaptcha_private_key
 
     db.app = app
     db.init_app(app)
